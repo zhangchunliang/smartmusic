@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 /**
  * Description:
  *
- * @author Eric(zhangchunliang@lkmotion.com)
+ * @author Eric(zhangchunliang1@gmail.com)
  * @since 2020/5/12
  */
 abstract class BaseActivity : AppCompatActivity(){

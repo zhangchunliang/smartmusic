@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 /**
  * Description:
  *
- * @author Eric(zhangchunliang@lkmotion.com)
+ * @author Eric(zhangchunliang1@gmail.com)
  * @since 2020/5/13
  */
 abstract class BaseFragment : Fragment() {

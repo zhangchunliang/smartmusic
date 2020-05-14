@@ -6,6 +6,7 @@ import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
 import android.widget.ImageView
+import androidx.core.animation.doOnEnd
 import eric.com.smartmusic.R
 import eric.com.smartmusic.base.BaseActivity
 
@@ -24,18 +25,26 @@ class SplashActivity : BaseActivity() {
         var scaleY = ObjectAnimator.ofFloat(imageView, "scaleY", 1f).apply {
             duration = 1000L
         }
+        scaleX.doOnEnd {
+
+        }
         AnimatorSet().apply {
             play(scaleX).with(scaleY)
+            /*
             addListener(object : AnimatorListenerAdapter() {
 
                 override fun onAnimationEnd(animation: Animator?) {
                     super.onAnimationEnd(animation)
-                    Intent(this@SplashActivity, MainActivity::class.java).apply {
-                        startActivity(this)
-                        finish()
+
                     }
                 }
-            })
+            })*/
+            doOnEnd {
+                Intent(this@SplashActivity, MainActivity::class.java).apply {
+                    startActivity(this)
+                    finish()
+                }
+            }
             start()
         }
     }
