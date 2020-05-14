@@ -1,10 +1,9 @@
 package eric.com.smartmusic.util
 
-import android.view.MenuItem
-import android.widget.Toast
-import android.widget.Toast.*
+import android.content.Intent
 import androidx.appcompat.widget.Toolbar
 import eric.com.smartmusic.R
+import eric.com.smartmusic.ui.SettingActivity
 
 /**
  * Description:
@@ -37,7 +36,12 @@ interface ToolBarManager {
             if (item != null) {
                 when(item.itemId){
                     R.id.setting->{
-                        Toast.makeText(toolbar.context, "setting", Toast.LENGTH_SHORT).show()
+//                        Toast.makeText(toolbar.context, "setting", Toast.LENGTH_SHORT).show()
+                        Intent(toolbar.context, SettingActivity::class.java).apply {
+                            toolbar.context.startActivity(this)
+                        }
+
+
                     }
                 }
             }
@@ -45,4 +49,8 @@ interface ToolBarManager {
         }
     }
 
+    fun initSettingToolBar(){
+        toolbar.title = "设置"
+
+    }
 }
