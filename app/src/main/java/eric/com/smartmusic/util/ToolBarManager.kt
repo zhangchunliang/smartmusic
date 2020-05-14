@@ -1,6 +1,7 @@
 package eric.com.smartmusic.util
 
 import androidx.appcompat.widget.Toolbar
+import eric.com.smartmusic.R
 
 /**
  * Description:
@@ -14,7 +15,7 @@ interface ToolBarManager {
 
     fun initMainToolBar() {
         toolbar.title = "智慧影音"
-//        toolbar.inflateMenu(R.menu.main_setting)
+        toolbar.inflateMenu(R.menu.main_setting)
     }
 
 }
