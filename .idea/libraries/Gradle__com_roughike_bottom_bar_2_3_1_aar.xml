@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.roughike:bottom-bar:2.3.1@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialDesign/ImageryHeader-master/gradle/wrapper/wrapper/dists/gradle-2.2.1-all/caches/transforms-2/files-2.1/02ee3cf8374d7cdc713e824b8aa36124/jetified-bottom-bar-2.3.1/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../MaterialDesign/ImageryHeader-master/gradle/wrapper/wrapper/dists/gradle-2.2.1-all/caches/transforms-2/files-2.1/02ee3cf8374d7cdc713e824b8aa36124/jetified-bottom-bar-2.3.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../MaterialDesign/ImageryHeader-master/gradle/wrapper/wrapper/dists/gradle-2.2.1-all/caches/modules-2/files-2.1/com.roughike/bottom-bar/2.3.1/39f1119fdae83e453c640b68c543defded759e3b/bottom-bar-2.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../MaterialDesign/ImageryHeader-master/gradle/wrapper/wrapper/dists/gradle-2.2.1-all/caches/modules-2/files-2.1/com.roughike/bottom-bar/2.3.1/a24a34cb8478811e08615ea06a5c27d636bc7e43/bottom-bar-2.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

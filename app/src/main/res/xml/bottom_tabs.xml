@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@mipmap/ic_bottom_home_icon"
+        title="首页"
+        />
+    <tab
+        id="@+id/tab_mv"
+        icon="@mipmap/ic_bottom_mv_unselect"
+        title="Nearby" />
+    <tab
+        id="@+id/tab_vlist"
+        icon="@mipmap/ic_bottom_vlist_unselect"
+        title="V榜" />
+    <tab
+        id="@+id/tab_mvlist"
+        icon="@mipmap/ic_bottom_mvlist_unselect"
+        title="悦单" />
+</tabs>
