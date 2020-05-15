@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.FiveColorChangingTabsActivity" android:theme="@style/AppTheme.TransNav" />
     </application>
 
 </manifest>
