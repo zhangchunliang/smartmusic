@@ -35,15 +35,15 @@ abstract class BaseFragment : Fragment() {
         initData()
     }
 
-    protected fun init(){
+    protected open fun init(){
 
     }
 
-    protected fun initData(){
+    protected open fun initData(){
 
     }
 
-    protected fun initListener(){
+    protected open fun initListener(){
 
     }
 

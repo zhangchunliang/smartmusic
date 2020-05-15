@@ -2,19 +2,18 @@
 <tabs>
     <tab
         id="@+id/tab_home"
-        icon="@mipmap/ic_bottom_home_icon"
-        title="首页"
+        icon="@drawable/bottom_home_selector"
         />
     <tab
         id="@+id/tab_mv"
-        icon="@mipmap/ic_bottom_mv_unselect"
-        title="Nearby" />
+        icon="@drawable/bottom_mvlist_selector"
+        />
     <tab
         id="@+id/tab_vlist"
-        icon="@mipmap/ic_bottom_vlist_unselect"
-        title="V榜" />
+        icon="@drawable/bottom_vlist_selector"
+        />
     <tab
         id="@+id/tab_mvlist"
-        icon="@mipmap/ic_bottom_mvlist_unselect"
-        title="悦单" />
+        icon="@drawable/bottom_mvlist_selector"
+        />
 </tabs>

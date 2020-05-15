@@ -23,9 +23,9 @@ abstract class BaseActivity : AppCompatActivity(){
 
     abstract fun getLayoutId():Int
 
-    protected fun initListener() = Unit
+    protected open fun initListener() = Unit
 
-    open protected fun initData() = Unit
+    protected open fun initData() = Unit
 
     protected fun ShowToast(msg:String) {
         runOnUiThread{

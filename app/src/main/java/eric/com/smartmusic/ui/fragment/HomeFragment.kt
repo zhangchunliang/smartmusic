@@ -1,4 +1,6 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.fragment
+
+import eric.com.smartmusic.ui.fragment.BaseFragment
 
 /**
  * Description:

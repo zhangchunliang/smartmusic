@@ -1,7 +1,5 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.activity
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Intent
@@ -24,9 +22,6 @@ class SplashActivity : BaseActivity() {
         }
         var scaleY = ObjectAnimator.ofFloat(imageView, "scaleY", 1f).apply {
             duration = 1000L
-        }
-        scaleX.doOnEnd {
-
         }
         AnimatorSet().apply {
             play(scaleX).with(scaleY)

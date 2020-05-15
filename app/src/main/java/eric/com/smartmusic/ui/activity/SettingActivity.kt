@@ -1,4 +1,4 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.activity
 
 import android.util.Log
 import androidx.appcompat.widget.Toolbar

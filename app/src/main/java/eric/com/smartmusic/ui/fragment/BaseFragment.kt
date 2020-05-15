@@ -1,4 +1,4 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.fragment
 
 import androidx.fragment.app.Fragment
 

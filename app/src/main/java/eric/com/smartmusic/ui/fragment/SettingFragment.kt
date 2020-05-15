@@ -1,4 +1,4 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import eric.com.smartmusic.R
+import eric.com.smartmusic.ui.activity.AboutActivity
 
 class SettingFragment : PreferenceFragmentCompat() {
 

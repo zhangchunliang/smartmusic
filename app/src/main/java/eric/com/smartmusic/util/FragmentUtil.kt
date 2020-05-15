@@ -1,7 +1,7 @@
 package eric.com.smartmusic.util
 
 import eric.com.smartmusic.R
-import eric.com.smartmusic.ui.*
+import eric.com.smartmusic.ui.fragment.*
 
 /**
  * Description:
@@ -21,7 +21,7 @@ class FragmentUtil private constructor(){
         }
     }
 
-    fun getFragment(tabId:Int):BaseFragment?{
+    fun getFragment(tabId:Int): BaseFragment?{
         return when(tabId){
             R.id.tab_home -> homeFragment
             R.id.tab_mv -> mvFragment

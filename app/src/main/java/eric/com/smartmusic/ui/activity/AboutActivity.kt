@@ -1,4 +1,4 @@
-package eric.com.smartmusic.ui
+package eric.com.smartmusic.ui.activity
 
 import eric.com.smartmusic.R
 import eric.com.smartmusic.base.BaseActivity

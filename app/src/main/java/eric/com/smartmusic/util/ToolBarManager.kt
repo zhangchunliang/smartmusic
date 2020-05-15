@@ -3,7 +3,7 @@ package eric.com.smartmusic.util
 import android.content.Intent
 import androidx.appcompat.widget.Toolbar
 import eric.com.smartmusic.R
-import eric.com.smartmusic.ui.SettingActivity
+import eric.com.smartmusic.ui.activity.SettingActivity
 
 /**
  * Description:

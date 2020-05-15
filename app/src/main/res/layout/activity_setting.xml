@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.SettingActivity">
+    tools:context=".ui.activity.SettingActivity">
     <include layout="@layout/toolbar" />
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="eric.com.smartmusic.ui.SettingFragment"
+        class="eric.com.smartmusic.ui.fragment.SettingFragment"
         android:id="@+id/setting_fragment"/>
 </LinearLayout>
