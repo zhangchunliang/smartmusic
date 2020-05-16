@@ -27,9 +27,10 @@ abstract class BaseActivity : AppCompatActivity(){
 
     protected open fun initData() = Unit
 
-    protected fun ShowToast(msg:String) {
+    protected fun showToast(msg:String) {
         runOnUiThread{
             Toast.makeText(this, msg,Toast.LENGTH_SHORT).show()
+
         }
     }
 }

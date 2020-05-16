@@ -3,17 +3,21 @@
     <tab
         id="@+id/tab_home"
         icon="@drawable/bottom_home_selector"
+        title="首页"
         />
     <tab
         id="@+id/tab_mv"
         icon="@drawable/bottom_mvlist_selector"
+        title="MV"
         />
     <tab
         id="@+id/tab_vlist"
         icon="@drawable/bottom_vlist_selector"
+        title="V榜"
         />
     <tab
         id="@+id/tab_mvlist"
         icon="@drawable/bottom_mvlist_selector"
+        title="悦单"
         />
 </tabs>

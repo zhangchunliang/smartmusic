@@ -1,5 +1,9 @@
 package eric.com.smartmusic.ui.fragment
 
+import android.graphics.Color
+import android.view.Gravity
+import android.view.View
+import android.widget.TextView
 import eric.com.smartmusic.ui.fragment.BaseFragment
 
 /**
@@ -9,4 +13,13 @@ import eric.com.smartmusic.ui.fragment.BaseFragment
  * @since 2020/5/15
  */
 class MVListFragment: BaseFragment() {
+    override fun initView(): View? {
+        var text = TextView(context).apply {
+            gravity = Gravity.CENTER
+            setTextColor(Color.RED)
+            text = "MVListFragment"
+        }
+
+        return text
+    }
 }

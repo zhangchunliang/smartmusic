@@ -13,7 +13,7 @@ import eric.com.smartmusic.ui.activity.SettingActivity
  */
 interface ToolBarManager {
 
-    var toolbar: Toolbar
+    open var toolbar: Toolbar
 
     fun initMainToolBar() {
         toolbar.title = "智慧影音"

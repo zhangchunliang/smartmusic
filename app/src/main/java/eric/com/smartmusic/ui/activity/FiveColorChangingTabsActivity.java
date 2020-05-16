@@ -1,13 +1,14 @@
 package eric.com.smartmusic.ui.activity;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabReselectListener;
 import com.roughike.bottombar.OnTabSelectListener;
+
 import eric.com.smartmusic.R;
 /**
  * Created by iiro on 7.6.2016.
@@ -26,6 +27,8 @@ public class FiveColorChangingTabsActivity extends AppCompatActivity {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(int tabId) {
+
+                
             }
         });
 

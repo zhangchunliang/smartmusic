@@ -1,5 +1,6 @@
 package eric.com.smartmusic.util
 
+import androidx.fragment.app.Fragment
 import eric.com.smartmusic.R
 import eric.com.smartmusic.ui.fragment.*
 
@@ -21,7 +22,7 @@ class FragmentUtil private constructor(){
         }
     }
 
-    fun getFragment(tabId:Int): BaseFragment?{
+    fun getFragment(tabId:Int): Fragment?{
         return when(tabId){
             R.id.tab_home -> homeFragment
             R.id.tab_mv -> mvFragment
