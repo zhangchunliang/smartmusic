@@ -9,6 +9,8 @@ import com.google.gson.reflect.TypeToken
 import eric.com.smartmusic.R
 import eric.com.smartmusic.adapter.HomeAdapter
 import eric.com.smartmusic.model.HomeItemBean
+import eric.com.smartmusic.presenter.Interf.HomeView
+import eric.com.smartmusic.presenter.impl.HomePresenterImpl
 import eric.com.smartmusic.util.ThreadUtil
 import eric.com.smartmusic.util.URLProviderUtils
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -21,9 +23,10 @@ import java.io.IOException
  * @author Eric(zhangchunliang@lkmotion.com)
  * @since 2020/5/15
  */
-class HomeFragment : BaseFragment(){
+class HomeFragment : BaseFragment(), HomeView{
 
     private val adapter by lazy { HomeAdapter()}
+    private val presenter by lazy { HomePresenterImpl(this) }
 
     override fun initView(): View? {
         return View.inflate(context, R.layout.fragment_home, null)
@@ -38,7 +41,8 @@ class HomeFragment : BaseFragment(){
         refreshLayout.setColorSchemeColors(Color.RED, Color.YELLOW, Color.GREEN)
         // refreshLayout listener
         refreshLayout.setOnRefreshListener {
-            loadDatas()
+//            loadDatas()
+            presenter.loadDatas()
         }
         // recyclerview listener
         recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener(){
@@ -48,7 +52,8 @@ class HomeFragment : BaseFragment(){
                     if (layoutManager is LinearLayoutManager) {
                         var position = layoutManager.findLastVisibleItemPosition()
                         if (position == adapter.itemCount -1){
-                            loadMore(position)
+//                            loadMore(position)
+                            presenter.loadMore(position)
                         }
                     }
                 }
@@ -61,76 +66,99 @@ class HomeFragment : BaseFragment(){
     }
 
     override fun initData() {
-        loadDatas()
+//        loadDatas()
+        presenter.loadDatas()
     }
 
-    private fun loadDatas() {
-        var path = URLProviderUtils.getHomeUrl(0, 20)
-        var request = Request.Builder().apply {
-            url(path)
-            get()
-        }.build()
-        OkHttpClient().newCall(request).enqueue(object :Callback{
-            override fun onFailure(call: Call, e: IOException) {
-                ThreadUtil.runOnMainUiThread {
-                    refreshLayout.isRefreshing = false
-                }
-                showToast("获取数据出错:$call")
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                ThreadUtil.runOnMainUiThread {
-                    refreshLayout.isRefreshing = false
-                }
-                var result: String? = response?.let {
-                    if (it.code() == 200) {
-                        it.body().toString()
-                    }else{
-                        println("result:${it.code()}")
-                        null
-                    }
-                } ?: return
-                showToast("获取数据成功:$result")
-                val gson = Gson()
-                val list = gson.fromJson<List<HomeItemBean>>(result,
-                    object :TypeToken<List<HomeItemBean>>(){}.type)
-
-                ThreadUtil.runOnMainUiThread{
-                    adapter.updateList(list)
-                }
-            }
-        })
+    override fun onFailure(message: String?) {
+        refreshLayout.isRefreshing = false
+        message?.let {
+            showToast(message)
+        }
     }
 
-    private fun loadMore(offset:Int) {
-        var path = URLProviderUtils.getHomeUrl(offset, 20)
-        var request = Request.Builder().apply {
-            url(path)
-            get()
-        }.build()
-        OkHttpClient().newCall(request).enqueue(object :Callback{
-            override fun onFailure(call: Call, e: IOException) {
-                showToast("获取数据出错:$call")
-            }
+    override fun onSuccess(list: List<HomeItemBean>?) {
+        refreshLayout.isRefreshing = false
+        list?.let{
+            adapter.updateList(list)
+        }
 
-            override fun onResponse(call: Call, response: Response) {
-                var result: String? = response?.let {
-                    if (it.code() == 200) {
-                        it.body().toString()
-                    }else{
-                        println("result:${it.code()}")
-                        null
-                    }
-                } ?: return
-                showToast("获取数据成功:$result")
-                val gson = Gson()
-                val list = gson.fromJson<List<HomeItemBean>>(result,
-                    object :TypeToken<List<HomeItemBean>>(){}.type)
-
-                ThreadUtil.runOnMainUiThread{
-                    adapter.loadMoreList(list)
-                }
-            }
-        })
     }
+
+    override fun loadMore(list: List<HomeItemBean>?) {
+        list?.let{
+            adapter.loadMoreList(list)
+        }
+
+    }
+
+//    private fun loadDatas() {
+//        var path = URLProviderUtils.getHomeUrl(0, 20)
+//        var request = Request.Builder().apply {
+//            url(path)
+//            get()
+//        }.build()
+//        OkHttpClient().newCall(request).enqueue(object :Callback{
+//            override fun onFailure(call: Call, e: IOException) {
+//                ThreadUtil.runOnMainUiThread {
+//                    refreshLayout.isRefreshing = false
+//                }
+//                showToast("获取数据出错:$call")
+//            }
+//
+//            override fun onResponse(call: Call, response: Response) {
+//                ThreadUtil.runOnMainUiThread {
+//                    refreshLayout.isRefreshing = false
+//                }
+//                var result: String? = response?.let {
+//                    if (it.code() == 200) {
+//                        it.body().toString()
+//                    }else{
+//                        println("result:${it.code()}")
+//                        null
+//                    }
+//                } ?: return
+//                showToast("获取数据成功:$result")
+//                val gson = Gson()
+//                val list = gson.fromJson<List<HomeItemBean>>(result,
+//                    object :TypeToken<List<HomeItemBean>>(){}.type)
+//
+//                ThreadUtil.runOnMainUiThread{
+//                    adapter.updateList(list)
+//                }
+//            }
+//        })
+//    }
+//
+//    private fun loadMore(offset:Int) {
+//        var path = URLProviderUtils.getHomeUrl(offset, 20)
+//        var request = Request.Builder().apply {
+//            url(path)
+//            get()
+//        }.build()
+//        OkHttpClient().newCall(request).enqueue(object :Callback{
+//            override fun onFailure(call: Call, e: IOException) {
+//                showToast("获取数据出错:$call")
+//            }
+//
+//            override fun onResponse(call: Call, response: Response) {
+//                var result: String? = response?.let {
+//                    if (it.code() == 200) {
+//                        it.body().toString()
+//                    }else{
+//                        println("result:${it.code()}")
+//                        null
+//                    }
+//                } ?: return
+//                showToast("获取数据成功:$result")
+//                val gson = Gson()
+//                val list = gson.fromJson<List<HomeItemBean>>(result,
+//                    object :TypeToken<List<HomeItemBean>>(){}.type)
+//
+//                ThreadUtil.runOnMainUiThread{
+//                    adapter.loadMoreList(list)
+//                }
+//            }
+//        })
+//    }
 }
