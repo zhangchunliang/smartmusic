@@ -41,11 +41,14 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>(){
     }
 
     override fun getItemCount(): Int {
+        if (list.size == 0){
+            return 0
+        }
         return list.size + 1
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (list.size == position) {
+        if (list.size == position && position != 0) {
             // type load more
             return 1
         }

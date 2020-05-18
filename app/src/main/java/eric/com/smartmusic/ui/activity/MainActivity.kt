@@ -49,6 +49,6 @@ class MainActivity : BaseActivity() , ToolBarManager{
         }
     }
     override var toolbar: Toolbar
-        get() = findViewById(R.id.toolbar)
+        get() = findViewById(R.id.include)
         set(value) {}
 }
