@@ -1,6 +1,7 @@
 package eric.com.smartmusic.net
 
 import com.google.gson.Gson
+import eric.com.smartmusic.model.HomeItemBean
 import java.lang.reflect.ParameterizedType
 
 /**

@@ -8,6 +8,7 @@ import com.squareup.picasso.Picasso
 import eric.com.smartmusic.R
 import eric.com.smartmusic.model.HomeItemBean
 import kotlinx.android.synthetic.main.home_item.view.*
+import com.squareup.picasso.Callback
 
 /**
  * Description:
@@ -27,11 +28,14 @@ class HomeItemView : RelativeLayout {
     fun setData(data:HomeItemBean) {
         title.apply {
             text = data.title
+            println("标题：${data.title}")
         }
         desc.apply {
             text = data.description
+            println("简介：${data.description}")
         }
 
-        Picasso.with(context).load(data.posterPic).into(imageView)
+        Picasso.with(context).load(data.posterPic).placeholder(R.mipmap.comment_bg).into(imageView)
+        println("图片：${data.posterPic}")
     }
 }

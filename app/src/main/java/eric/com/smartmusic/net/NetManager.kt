@@ -49,11 +49,13 @@ class NetManager private constructor(){
 
                 val parseResult = req.parseResult(result)
                 ThreadUtil.runOnMainUiThread{
-                    if (parseResult == null){
-                        req.handler.onFailure("response code:${response.code()}message:${response.message()}")
-                    }else {
-                        req.handler.onSuccess(parseResult)
-                    }
+//                    if (parseResult == null){
+//                        req.handler.onFailure("response code:${response.code()}message:${response.message()}")
+//                    }else {
+//                        req.handler.onSuccess(parseResult)
+//                    }
+                    //TEST DATA
+                    req.handler.onSuccess(parseResult)
                 }
             }
         })

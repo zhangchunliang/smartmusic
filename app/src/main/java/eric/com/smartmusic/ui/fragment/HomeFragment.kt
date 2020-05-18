@@ -78,7 +78,9 @@ class HomeFragment : BaseFragment(), HomeView{
     }
 
     override fun onSuccess(list: List<HomeItemBean>?) {
-        refreshLayout.isRefreshing = false
+        refreshLayout?.let {
+            it.isRefreshing = false
+        }
         list?.let{
             adapter.updateList(list)
         }

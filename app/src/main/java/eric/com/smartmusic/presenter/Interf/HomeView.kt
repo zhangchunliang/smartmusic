@@ -9,15 +9,9 @@ import eric.com.smartmusic.model.HomeItemBean
  * @since 2020/5/16
  */
 interface HomeView {
-    fun onFailure(message: String?) {
-        TODO("Not yet implemented")
-    }
+    fun onFailure(message: String?)
 
-    fun onSuccess(list: List<HomeItemBean>?) {
+    fun onSuccess(list: List<HomeItemBean>?)
 
-    }
-
-    fun loadMore(list: List<HomeItemBean>?) {
-
-    }
+    fun loadMore(list: List<HomeItemBean>?)
 }
