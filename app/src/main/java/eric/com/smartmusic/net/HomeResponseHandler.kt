@@ -34,9 +34,6 @@ abstract class HomeResponseHandler<RESPONSE> :ResponseHandler<RESPONSE> {
                 "", 1,1,1, 1, "", "",""),
             HomeItemBean("", 1, "一张图片",
                 "第五张美女图片", "http://ww2.sinaimg.cn/bmiddle/642beb18gw1ep3629gfm0g206o050b2a.gif", "123", "123",
-                "", 1,1,1, 1, "", "",""),
-            HomeItemBean("", 1, "一张图片",
-                "第六张美女图片", "http://ww1.sinaimg.cn/bmiddle/9be2329dgw1etlyb1yu49j20c82p6qc1.jpg", "123", "123",
                 "", 1,1,1, 1, "", "","")
         )
 

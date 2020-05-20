@@ -7,9 +7,10 @@
     tools:context=".ui.activity.AboutActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="这是一个关于界面"/>
+        android:text="这是一个关于界面" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

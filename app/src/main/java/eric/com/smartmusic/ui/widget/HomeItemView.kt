@@ -9,6 +9,7 @@ import eric.com.smartmusic.R
 import eric.com.smartmusic.model.HomeItemBean
 import kotlinx.android.synthetic.main.home_item.view.*
 import com.squareup.picasso.Callback
+import java.lang.Exception
 
 /**
  * Description:
@@ -35,7 +36,14 @@ class HomeItemView : RelativeLayout {
             println("简介：${data.description}")
         }
 
-        Picasso.with(context).load(data.posterPic).placeholder(R.mipmap.comment_bg).into(imageView)
-        println("图片：${data.posterPic}")
+        Picasso.get().load(data.posterPic).placeholder(R.mipmap.comment_bg).into(imageView, object :Callback{
+            override fun onSuccess() {
+            }
+
+            override fun onError(e: Exception?) {
+                println("图片：${data.posterPic},Exception:${e.toString()}")
+            }
+        })
+
     }
 }
